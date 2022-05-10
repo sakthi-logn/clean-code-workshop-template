@@ -1,5 +1,7 @@
 package com.thoughtworks.movierental;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
+        LocalDateTime timeBeforeLoopStart = LocalDateTime.now();
         for (Rental rental : rentals) {
             frequentRenterPoints += rental.frequentRenterPoints();
 
@@ -31,6 +34,9 @@ public class Customer {
                     rental.amount() + "\n";
             totalAmount += rental.amount();
         }
+        LocalDateTime timeAfterLoopEnd = LocalDateTime.now();
+        System.out.printf("time taken in milliseconds for iterating all rentals 1 time : %s\n",
+                Duration.between(timeBeforeLoopStart, timeAfterLoopEnd).toMillis());
 
         //add footer lines result
         result += "Amount owed is " + totalAmount + "\n";
