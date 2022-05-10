@@ -28,8 +28,8 @@ public class Customer {
 
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" +
-                    amount(rental) + "\n";
-            totalAmount += amount(rental);
+                    rental.amount() + "\n";
+            totalAmount += rental.amount();
         }
 
         //add footer lines result
@@ -37,27 +37,6 @@ public class Customer {
         result += "You earned " + frequentRenterPoints
                 + " frequent renter points";
         return result;
-    }
-
-    private double amount(Rental rental) {
-        double thisAmount = 0;
-        //determine amounts for each line
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return thisAmount;
     }
 
     public String htmlStatement() {
