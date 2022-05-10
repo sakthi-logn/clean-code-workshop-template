@@ -30,8 +30,8 @@ public class Customer {
         }
 
         //add footer lines result
-        result += "Amount owed is " + totalAmount() + "\n";
-        result += "You earned " + frequentRenterPoints()
+        result += "Amount owed is " + rentals1.totalAmount() + "\n";
+        result += "You earned " + rentals1.frequentRenterPoints()
                 + " frequent renter points";
         return result;
     }
