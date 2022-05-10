@@ -1,13 +1,12 @@
 package com.thoughtworks.movierental;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
     private final String name;
     private final List<Rental> rentals = new ArrayList<>();
+    private final Rentals rentals1 = new Rentals(new ArrayList<>());
 
     public Customer(String name) {
         this.name = name;
@@ -15,6 +14,7 @@ public class Customer {
 
     public void addRental(Rental arg) {
         rentals.add(arg);
+        rentals1.add(arg);
     }
 
     public String getName() {
