@@ -16,11 +16,7 @@ public class Rentals {
     }
 
     public double totalAmount() {
-        double totalAmount = 0;
-        for (Rental rental : rentals) {
-            totalAmount += rental.amount();
-        }
-        return totalAmount;
+        return rentals.stream().map(Rental::amount).mapToDouble(amount-> amount).sum();
     }
 
     public int frequentRenterPoints() {
