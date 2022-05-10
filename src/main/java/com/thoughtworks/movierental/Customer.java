@@ -28,14 +28,17 @@ public class Customer {
         LocalDateTime timeBeforeLoopStart = LocalDateTime.now();
         for (Rental rental : rentals) {
             frequentRenterPoints += rental.frequentRenterPoints();
-
+        }
+        for (Rental rental : rentals) {
             //show figures for this rental
             result += "\t" + rental.title() + "\t" +
                     rental.amount() + "\n";
+        }
+        for (Rental rental : rentals) {
             totalAmount += rental.amount();
         }
         LocalDateTime timeAfterLoopEnd = LocalDateTime.now();
-        System.out.printf("time taken in milliseconds for iterating all rentals 1 time : %s\n",
+        System.out.printf("time taken in milliseconds for iterating all rentals 3 times : %s\n",
                 Duration.between(timeBeforeLoopStart, timeAfterLoopEnd).toMillis());
 
         //add footer lines result
