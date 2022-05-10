@@ -36,22 +36,6 @@ public class Customer {
         return result;
     }
 
-    private double totalAmount() {
-        double totalAmount = 0;
-        for (Rental rental : rentals) {
-            totalAmount += rental.amount();
-        }
-        return totalAmount;
-    }
-
-    private int frequentRenterPoints() {
-        int frequentRenterPoints = 0;
-        for (Rental rental : rentals) {
-            frequentRenterPoints += rental.frequentRenterPoints();
-        }
-        return frequentRenterPoints;
-    }
-
     public String htmlStatement() {
         return "";
     }
