@@ -16,15 +16,11 @@ public class Rentals {
     }
 
     public double totalAmount() {
-        return rentals.stream().map(Rental::amount).mapToDouble(amount-> amount).sum();
+        return rentals.stream().map(Rental::amount).mapToDouble(amount -> amount).sum();
     }
 
     public int frequentRenterPoints() {
-        int frequentRenterPoints = 0;
-        for (Rental rental : rentals) {
-            frequentRenterPoints += rental.frequentRenterPoints();
-        }
-        return frequentRenterPoints;
+        return rentals.stream().map(Rental::frequentRenterPoints).mapToInt(points -> points).sum();
     }
 
     public String transform(Function<Rental, String> transformer) {
