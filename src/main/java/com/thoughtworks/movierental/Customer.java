@@ -27,7 +27,7 @@ public class Customer {
             frequentRenterPoints += rental.frequentRenterPoints();
 
             //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" +
+            result += "\t" + rental.title() + "\t" +
                     rental.amount() + "\n";
             totalAmount += rental.amount();
         }

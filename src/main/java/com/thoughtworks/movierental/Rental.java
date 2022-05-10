@@ -13,15 +13,15 @@ public class Rental {
         return daysRented;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public String title() {
+        return movie.getTitle();
     }
 
     public int frequentRenterPoints() {
         // add frequent renter points
         int frequentRenterPoints = 1;
         // add bonus for a two day new release rental
-        if ((getMovie().getPriceCode() == Movie.NEW_RELEASE)
+        if ((movie.getPriceCode() == Movie.NEW_RELEASE)
                 &&
                 getDaysRented() > 1) frequentRenterPoints++;
         return frequentRenterPoints;
@@ -30,7 +30,7 @@ public class Rental {
     public double amount() {
         double thisAmount = 0;
         //determine amounts for each line
-        switch (getMovie().getPriceCode()) {
+        switch (movie.getPriceCode()) {
             case Movie.REGULAR:
                 thisAmount += 2;
                 if (getDaysRented() > 2)
