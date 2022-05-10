@@ -30,10 +30,8 @@ public class Customer {
         }
 
         //add footer lines result
-        double totalAmount = totalAmount();
-        result += "Amount owed is " + totalAmount + "\n";
-        int frequentRenterPoints = frequentRenterPoints();
-        result += "You earned " + frequentRenterPoints
+        result += "Amount owed is " + totalAmount() + "\n";
+        result += "You earned " + frequentRenterPoints()
                 + " frequent renter points";
         return result;
     }
