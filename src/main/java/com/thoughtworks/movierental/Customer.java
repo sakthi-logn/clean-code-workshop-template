@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Customer {
     private final String name;
-    private final List<Rental> rentals = new ArrayList<>();
     private final Rentals rentals1 = new Rentals(new ArrayList<>());
 
     public Customer(String name) {
@@ -13,7 +12,6 @@ public class Customer {
     }
 
     public void addRental(Rental arg) {
-        rentals.add(arg);
         rentals1.add(arg);
     }
 
