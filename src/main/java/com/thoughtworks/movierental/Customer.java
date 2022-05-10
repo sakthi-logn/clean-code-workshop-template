@@ -23,7 +23,6 @@ public class Customer {
 
     public String statement() {
         String result = "Rental Record for " + getName() + "\n";
-        LocalDateTime timeBeforeLoopStart = LocalDateTime.now();
         int frequentRenterPoints = frequentRenterPoints();
         for (Rental rental : rentals) {
             //show figures for this rental
@@ -31,9 +30,6 @@ public class Customer {
                     rental.amount() + "\n";
         }
         double totalAmount = totalAmount();
-        LocalDateTime timeAfterLoopEnd = LocalDateTime.now();
-        System.out.printf("time taken in milliseconds for iterating all rentals 3 times : %s\n",
-                Duration.between(timeBeforeLoopStart, timeAfterLoopEnd).toMillis());
 
         //add footer lines result
         result += "Amount owed is " + totalAmount + "\n";
