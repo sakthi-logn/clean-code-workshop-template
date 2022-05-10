@@ -31,6 +31,18 @@ public class Customer {
     }
 
     public String htmlStatement() {
-        return "";
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>Rental Records</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                String.format("<h1>Rental Record for <b>%s</b></h1>\n", getName()) +
+                rentals.transform(rental -> String.format("%s&ensp;%s<br>\n", rental.title(), rental.amount())) +
+                String.format("Amount owed is <b>%s</b><br>\n", rentals.totalAmount()) +
+                String.format("You earned <b>%s</b> frequent renter points<br>\n", rentals.frequentRenterPoints()) +
+                "</body>\n" +
+                "</html>";
     }
 }
