@@ -60,4 +60,8 @@ public class Customer {
                 + " frequent renter points";
         return result;
     }
+
+    public String htmlStatement() {
+        return "";
+    }
 }
