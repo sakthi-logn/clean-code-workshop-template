@@ -22,10 +22,9 @@ public class Customer {
     }
 
     public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
         LocalDateTime timeBeforeLoopStart = LocalDateTime.now();
+        int frequentRenterPoints = 0;
         for (Rental rental : rentals) {
             frequentRenterPoints += rental.frequentRenterPoints();
         }
@@ -34,6 +33,7 @@ public class Customer {
             result += "\t" + rental.title() + "\t" +
                     rental.amount() + "\n";
         }
+        double totalAmount = 0;
         for (Rental rental : rentals) {
             totalAmount += rental.amount();
         }
