@@ -1,6 +1,7 @@
 package com.thoughtworks.movierental;
 
 import java.util.List;
+import java.util.function.Function;
 
 public class Rentals {
 
@@ -28,5 +29,9 @@ public class Rentals {
             frequentRenterPoints += rental.frequentRenterPoints();
         }
         return frequentRenterPoints;
+    }
+
+    public String transform(Function<Rental, String> transformer) {
+        return rentals.stream().map(transformer).reduce("", (r1, r2) -> r1 + r2);
     }
 }

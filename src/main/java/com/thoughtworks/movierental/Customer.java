@@ -23,11 +23,8 @@ public class Customer {
 
     public String statement() {
         String result = "Rental Record for " + getName() + "\n";
-        for (Rental rental : rentals) {
-            //show figures for this rental
-            result += "\t" + rental.title() + "\t" +
-                    rental.amount() + "\n";
-        }
+        result += rentals1.transform(rental ->
+                "\t" + rental.title() + "\t" + rental.amount() + "\n");
 
         //add footer lines result
         result += "Amount owed is " + rentals1.totalAmount() + "\n";
