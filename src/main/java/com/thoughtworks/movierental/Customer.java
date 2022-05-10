@@ -30,10 +30,7 @@ public class Customer {
             result += "\t" + rental.title() + "\t" +
                     rental.amount() + "\n";
         }
-        double totalAmount = 0;
-        for (Rental rental : rentals) {
-            totalAmount += rental.amount();
-        }
+        double totalAmount = totalAmount();
         LocalDateTime timeAfterLoopEnd = LocalDateTime.now();
         System.out.printf("time taken in milliseconds for iterating all rentals 3 times : %s\n",
                 Duration.between(timeBeforeLoopStart, timeAfterLoopEnd).toMillis());
@@ -43,6 +40,14 @@ public class Customer {
         result += "You earned " + frequentRenterPoints
                 + " frequent renter points";
         return result;
+    }
+
+    private double totalAmount() {
+        double totalAmount = 0;
+        for (Rental rental : rentals) {
+            totalAmount += rental.amount();
+        }
+        return totalAmount;
     }
 
     private int frequentRenterPoints() {
