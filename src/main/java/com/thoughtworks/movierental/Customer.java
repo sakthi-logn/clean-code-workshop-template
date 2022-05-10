@@ -24,10 +24,7 @@ public class Customer {
     public String statement() {
         String result = "Rental Record for " + getName() + "\n";
         LocalDateTime timeBeforeLoopStart = LocalDateTime.now();
-        int frequentRenterPoints = 0;
-        for (Rental rental : rentals) {
-            frequentRenterPoints += rental.frequentRenterPoints();
-        }
+        int frequentRenterPoints = frequentRenterPoints();
         for (Rental rental : rentals) {
             //show figures for this rental
             result += "\t" + rental.title() + "\t" +
@@ -46,6 +43,14 @@ public class Customer {
         result += "You earned " + frequentRenterPoints
                 + " frequent renter points";
         return result;
+    }
+
+    private int frequentRenterPoints() {
+        int frequentRenterPoints = 0;
+        for (Rental rental : rentals) {
+            frequentRenterPoints += rental.frequentRenterPoints();
+        }
+        return frequentRenterPoints;
     }
 
     public String htmlStatement() {
