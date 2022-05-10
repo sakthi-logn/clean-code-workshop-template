@@ -31,11 +31,10 @@ public class Customer {
                     &&
                     rental.getDaysRented() > 1) frequentRenterPoints++;
 
-            double thisAmount = amount(rental);
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" +
-                    thisAmount + "\n";
-            totalAmount += thisAmount;
+                    amount(rental) + "\n";
+            totalAmount += amount(rental);
         }
 
         //add footer lines result
