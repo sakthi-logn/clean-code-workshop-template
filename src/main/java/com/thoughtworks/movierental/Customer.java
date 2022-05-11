@@ -20,14 +20,18 @@ public class Customer {
 
     public String statement() {
         String result = header();
-        result += rentals.transform(rental ->
-                "\t" + rental.title() + "\t" + rental.amount() + "\n");
+        result += body();
 
         //add footer lines result
         result += "Amount owed is " + rentals.totalAmount() + "\n";
         result += "You earned " + rentals.frequentRenterPoints()
                 + " frequent renter points";
         return result;
+    }
+
+    private String body() {
+        return rentals.transform(rental ->
+                "\t" + rental.title() + "\t" + rental.amount() + "\n");
     }
 
     private String header() {
