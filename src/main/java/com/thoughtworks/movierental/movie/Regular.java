@@ -7,8 +7,7 @@ public class Regular extends Movie {
 
     @Override
     public double amount(int daysRented) {
-        double thisAmount = super.amount(daysRented);
-        thisAmount += 2;
+        double thisAmount = super.amount(daysRented) + 2;
         if (daysRented > 2)
             thisAmount += (daysRented - 2) * 1.5;
         return thisAmount;
