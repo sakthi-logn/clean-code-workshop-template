@@ -21,8 +21,8 @@ public class Rental {
 
     public int frequentRenterPoints() {
         int frequentRenterPoints = movie.frequentRenterPoints(daysRented);
-        if (movie.getPriceCode() == Movie.ULTRA_HD) frequentRenterPoints = movie.frequentRenterPoints(daysRented);
-        if (movie.getPriceCode() == Movie.NEW_RELEASE) frequentRenterPoints = movie.frequentRenterPoints(daysRented);
+        if (movie.getPriceCode() == Movie.ULTRA_HD || movie.getPriceCode() == Movie.NEW_RELEASE)
+            frequentRenterPoints = movie.frequentRenterPoints(daysRented);
         return frequentRenterPoints;
     }
 
