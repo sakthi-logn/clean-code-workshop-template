@@ -14,4 +14,11 @@ class RentalTest {
         Rental rental1 = new Rental(ultraHdMovie1, 4);
         assertEquals(3, rental1.frequentRenterPoints());
     }
+
+    @Test
+    void amountForUltraHD(){
+        Movie ultraHdMovie1 = new UltraHd("Avatar-2");
+        Rental rental1 = new Rental(ultraHdMovie1, 4);
+        assertEquals(16, rental1.amount());
+    }
 }

@@ -9,4 +9,9 @@ public class UltraHd extends Movie {
     public int frequentRenterPoints(int daysRented) {
         return 3;
     }
+
+    @Override
+    public double amount(int daysRented) {
+        return daysRented * 4;
+    }
 }
