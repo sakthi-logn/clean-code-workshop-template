@@ -29,4 +29,8 @@ abstract public class Movie {
     public int frequentRenterPoints(int daysRented) {
         return 1;
     }
+
+    public double amount(int daysRented) {
+        return 0;
+    }
 }
