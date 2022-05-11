@@ -25,13 +25,6 @@ public class Rental {
 
     public double amount() {
         double thisAmount = movie.amount(daysRented);
-        switch (movie.getPriceCode()) {
-            case Movie.REGULAR:
-            case Movie.NEW_RELEASE:
-            case Movie.CHILDREN:
-                thisAmount = movie.amount(daysRented);
-                break;
-        }
         return thisAmount;
     }
 }
