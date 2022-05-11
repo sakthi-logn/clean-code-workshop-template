@@ -19,7 +19,7 @@ public class Customer {
     }
 
     public String statement() {
-        String result = "Rental Record for " + getName() + "\n";
+        String result = header();
         result += rentals.transform(rental ->
                 "\t" + rental.title() + "\t" + rental.amount() + "\n");
 
@@ -28,6 +28,10 @@ public class Customer {
         result += "You earned " + rentals.frequentRenterPoints()
                 + " frequent renter points";
         return result;
+    }
+
+    private String header() {
+        return "Rental Record for " + getName() + "\n";
     }
 
     public String htmlStatement() {
