@@ -26,10 +26,9 @@ public class Customer {
     }
 
     private String footer() {
-        String result = "Amount owed is " + rentals.totalAmount() + "\n";
-        result += "You earned " + rentals.frequentRenterPoints()
+        return "Amount owed is " + rentals.totalAmount() + "\n"
+                + "You earned " + rentals.frequentRenterPoints()
                 + " frequent renter points";
-        return result;
     }
 
     private String body() {
