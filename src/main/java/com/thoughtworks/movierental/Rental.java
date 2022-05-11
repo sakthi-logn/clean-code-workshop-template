@@ -1,8 +1,8 @@
 package com.thoughtworks.movierental;
 
 public class Rental {
-    private int daysRented;
-    private Movie movie;
+    private final int daysRented;
+    private final Movie movie;
 
     public Rental(Movie movie, int daysRented) {
         this.movie = movie;
@@ -18,7 +18,6 @@ public class Rental {
     }
 
     public int frequentRenterPoints() {
-        // add frequent renter points
         int frequentRenterPoints = 1;
         // add bonus for a two day new release rental
         if ((movie.getPriceCode() == Movie.NEW_RELEASE)
@@ -29,7 +28,6 @@ public class Rental {
 
     public double amount() {
         double thisAmount = 0;
-        //determine amounts for each line
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
                 thisAmount += 2;
