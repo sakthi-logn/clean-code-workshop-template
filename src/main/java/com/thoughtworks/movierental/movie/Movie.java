@@ -26,7 +26,7 @@ abstract public class Movie {
         return title;
     }
 
-    public int frequentRenterPoints() {
+    public int frequentRenterPoints(int daysRented) {
         return 1;
     }
 }
