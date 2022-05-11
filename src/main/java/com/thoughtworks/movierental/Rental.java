@@ -33,9 +33,7 @@ public class Rental {
                 thisAmount = movie.amount(daysRented);
                 break;
             case Movie.CHILDREN:
-                thisAmount += 1.5;
-                if (daysRented > 3)
-                    thisAmount += (daysRented - 3) * 1.5;
+                thisAmount = movie.amount(daysRented);
                 break;
         }
         return thisAmount;
