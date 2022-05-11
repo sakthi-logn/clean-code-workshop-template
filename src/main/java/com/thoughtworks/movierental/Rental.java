@@ -27,11 +27,7 @@ public class Rental {
         double thisAmount = movie.amount(daysRented);
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount = movie.amount(daysRented);
-                break;
             case Movie.NEW_RELEASE:
-                thisAmount = movie.amount(daysRented);
-                break;
             case Movie.CHILDREN:
                 thisAmount = movie.amount(daysRented);
                 break;
