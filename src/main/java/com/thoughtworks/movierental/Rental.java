@@ -1,5 +1,7 @@
 package com.thoughtworks.movierental;
 
+import com.thoughtworks.movierental.movie.Movie;
+
 public class Rental {
     private final int daysRented;
     private final Movie movie;
@@ -38,7 +40,7 @@ public class Rental {
             case Movie.NEW_RELEASE:
                 thisAmount += daysRented * 3;
                 break;
-            case Movie.CHILDRENS:
+            case Movie.CHILDREN:
                 thisAmount += 1.5;
                 if (daysRented > 3)
                     thisAmount += (daysRented - 3) * 1.5;

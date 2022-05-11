@@ -1,5 +1,9 @@
 package com.thoughtworks.movierental;
 
+import com.thoughtworks.movierental.movie.Children;
+import com.thoughtworks.movierental.movie.Movie;
+import com.thoughtworks.movierental.movie.NewRelease;
+import com.thoughtworks.movierental.movie.Regular;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,9 +14,9 @@ class CustomerTest {
     public void shouldReturnStatement() {
         Customer customer = new Customer("bob");
 
-        customer.addRental(new Rental(new Movie("movie-1", Movie.REGULAR), 4));
-        customer.addRental(new Rental(new Movie("movie-2", Movie.CHILDRENS), 5));
-        customer.addRental(new Rental(new Movie("movie-3", Movie.NEW_RELEASE), 6));
+        customer.addRental(new Rental(new Regular("movie-1"), 4));
+        customer.addRental(new Rental(new Children("movie-2"), 5));
+        customer.addRental(new Rental(new NewRelease("movie-3"), 6));
 
         assertEquals("Rental Record for bob\n" +
                 "\tmovie-1\t5.0\n" +
@@ -26,9 +30,9 @@ class CustomerTest {
     public void shouldReturnHtmlStatement() {
         Customer customer = new Customer("bob");
 
-        customer.addRental(new Rental(new Movie("movie-1", Movie.REGULAR), 4));
-        customer.addRental(new Rental(new Movie("movie-2", Movie.CHILDRENS), 5));
-        customer.addRental(new Rental(new Movie("movie-3", Movie.NEW_RELEASE), 6));
+        customer.addRental(new Rental(new Regular("movie-1"), 4));
+        customer.addRental(new Rental(new Children("movie-2"), 5));
+        customer.addRental(new Rental(new NewRelease("movie-3"), 6));
 
         String htmlStatement = "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +

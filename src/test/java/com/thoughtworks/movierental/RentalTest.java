@@ -1,5 +1,7 @@
 package com.thoughtworks.movierental;
 
+import com.thoughtworks.movierental.movie.Movie;
+import com.thoughtworks.movierental.movie.UltraHd;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,7 +10,7 @@ class RentalTest {
 
     @Test
     void frequentRenterPointsForUltraHD() {
-        Movie ultraHdMovie1 = new Movie("Avatar-2", Movie.ULTRA_HD);
+        Movie ultraHdMovie1 = new UltraHd("Avatar-2");
         Rental rental1 = new Rental(ultraHdMovie1, 4);
         assertEquals(3, rental1.frequentRenterPoints());
     }

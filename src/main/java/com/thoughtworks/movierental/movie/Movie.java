@@ -1,12 +1,12 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.movie;
 
-public class Movie {
-    public static final int CHILDRENS = 2;
+abstract public class Movie {
+    public static final int CHILDREN = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
     public static final int ULTRA_HD = 3;
 
-    private String title;
+    final private String title;
     private int priceCode;
 
     public Movie(String title, int priceCode) {
