@@ -20,12 +20,9 @@ public class Rental {
     }
 
     public int frequentRenterPoints() {
-        if (movie.getPriceCode() == Movie.ULTRA_HD) return 3;
         int frequentRenterPoints = movie.frequentRenterPoints(daysRented);
-        // add bonus for a two day new release rental
-        if ((movie.getPriceCode() == Movie.NEW_RELEASE)
-                &&
-                daysRented > 1) frequentRenterPoints = movie.frequentRenterPoints(daysRented);
+        if (movie.getPriceCode() == Movie.ULTRA_HD) return 3;
+        if (movie.getPriceCode() == Movie.NEW_RELEASE) frequentRenterPoints = movie.frequentRenterPoints(daysRented);
         return frequentRenterPoints;
     }
 
