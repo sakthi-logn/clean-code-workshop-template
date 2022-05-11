@@ -1,0 +1,7 @@
+As a owner of movie library
+I want to charge differently for UltraHD movies
+So that I can sustainably sell more UltraHD disks
+
+Expectation:
+Charge for UltraHD movies is 4/day
+Frequent renter points is 3
