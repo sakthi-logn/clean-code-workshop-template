@@ -30,7 +30,7 @@ public class Rental {
                 thisAmount = movie.amount(daysRented);
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += daysRented * 3;
+                thisAmount = movie.amount(daysRented);
                 break;
             case Movie.CHILDREN:
                 thisAmount += 1.5;

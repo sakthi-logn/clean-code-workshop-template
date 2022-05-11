@@ -10,4 +10,9 @@ public class NewRelease extends Movie {
         if (daysRented > 1) return super.frequentRenterPoints(daysRented) + 1;
         else return super.frequentRenterPoints(daysRented);
     }
+
+    @Override
+    public double amount(int daysRented) {
+        return super.amount(daysRented) + daysRented * 3;
+    }
 }
