@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Customer {
     private final String name;
     private final Rentals rentals = new Rentals(new ArrayList<>());
+    private final Statement htmlStatement;
 
     public Customer(String name) {
         this.name = name;
+        this.htmlStatement = new HtmlStatement(name, rentals);
     }
 
     public void addRental(Rental arg) {
@@ -38,16 +40,7 @@ public class Customer {
     }
 
     public String htmlStatement() {
-        return "<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
-                "<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <title>Rental Records</title>\n" +
-                "</head>\n" +
-                "<body>\n" +
-                htmlStatementHeader() + htmlStatementBody() + htmlStatementFooter() +
-                "</body>\n" +
-                "</html>";
+        return htmlStatement.generate();
     }
 
     private String htmlStatementBody() {
