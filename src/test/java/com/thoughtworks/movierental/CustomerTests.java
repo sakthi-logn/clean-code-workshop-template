@@ -1,6 +1,5 @@
 package com.thoughtworks.movierental;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +23,6 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled
     public void shouldReturnHtmlStatement() {
         Customer customer = new Customer("bob");
 
@@ -39,7 +37,7 @@ class CustomerTest {
                 "    <title>Rental Records</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "<h1>Rental Record for <b>Bob</b></h1>\n" +
+                "<h1>Rental Record for <b>bob</b></h1>\n" +
                 "movie-1&ensp;5.0<br>\n" +
                 "movie-2&ensp;4.5<br>\n" +
                 "movie-3&ensp;18.0<br>\n" +
