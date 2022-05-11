@@ -20,8 +20,7 @@ public class Rental {
     }
 
     public int frequentRenterPoints() {
-        int frequentRenterPoints = movie.frequentRenterPoints(daysRented);
-        return frequentRenterPoints;
+        return movie.frequentRenterPoints(daysRented);
     }
 
     public double amount() {
