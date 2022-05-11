@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class Customer {
     private final String name;
     private final Rentals rentals = new Rentals(new ArrayList<>());
+    private final Statement textStatement;
     private final Statement htmlStatement;
 
     public Customer(String name) {
         this.name = name;
+        this.textStatement = new TextStatement(name, rentals);
         this.htmlStatement = new HtmlStatement(name, rentals);
     }
 
@@ -21,7 +23,7 @@ public class Customer {
     }
 
     public String statement() {
-        return header() + body() + footer();
+        return this.textStatement.generate();
     }
 
     private String footer() {
