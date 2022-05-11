@@ -19,10 +19,7 @@ public class Customer {
     }
 
     public String statement() {
-        String result = header();
-        result += body();
-        result += footer();
-        return result;
+        return header() + body() + footer();
     }
 
     private String footer() {
