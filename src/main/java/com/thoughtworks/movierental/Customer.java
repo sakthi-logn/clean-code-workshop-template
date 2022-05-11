@@ -21,9 +21,12 @@ public class Customer {
     public String statement() {
         String result = header();
         result += body();
+        result += footer();
+        return result;
+    }
 
-        //add footer lines result
-        result += "Amount owed is " + rentals.totalAmount() + "\n";
+    private String footer() {
+        String result = "Amount owed is " + rentals.totalAmount() + "\n";
         result += "You earned " + rentals.frequentRenterPoints()
                 + " frequent renter points";
         return result;
